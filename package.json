@@ -3,11 +3,35 @@
   "version": "1.0.0",
   "description": "A string reversal library",
   "main": "index.js",
+  "scripts": {
+    "test": "nyc ava",
+    "build": "rollup -c",
+    "coverage": "nyc report --reporter=lcov --reporter=text-lcov --reporter=html"
+  },
   "author": "Steve Schroeder",
   "license": "MIT",
   "private": false,
   "dependencies": {},
   "devDependencies": {
-    "ava": "^3.0.0"
+    "@ava/babel-preset-stage-4": "^4.0.0",
+    "@ava/babel-preset-transform-test-files": "^6.0.0",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2",
+    "ava": "3.0.0",
+    "babel-plugin-istanbul": "^5.2.0",
+    "esm": "^3.2.25",
+    "nyc": "^15.0.0",
+    "rollup": "^1.29.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-watch": "^4.3.1",
+    "tap-xunit": "^2.4.1",
+    "tap-xunit-circleci": "^1.0.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register",
+      "esm"
+    ]
   }
 }
